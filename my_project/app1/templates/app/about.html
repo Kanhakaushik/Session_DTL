@@ -1,0 +1,198 @@
+ {% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* overflow: hidden; */
+      /* background-image: url("{% static 'image/EC.jpg' %}");
+        background-repeat: no-repeat;
+      height: auto;
+        background-size: cover; */
+    }
+
+    .div {
+      /* display: flex;
+      height: 100vh; */
+      /* overflow: hidden; */
+      /* background-image: url("{% static 'image/EC.jpg' %}");
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: cover; */
+      
+
+    }
+    .ro{
+      background-image: url("{% static 'image/EC.jpg' %}");
+        background-repeat: no-repeat;
+      height: auto;
+        background-size: cover;
+
+    }
+
+    /* body{
+         background-image: url("{% static 'image/EC.jpg' %}");
+        background-repeat: no-repeat; 
+      
+    } */
+    .image {
+      
+      /* background-image: url("{% static 'image/EC.jpg' %}"); */
+      /* background-size: cover;
+      background-position: center; */
+    /* background-image: url("{% static 'image/EC.jpg' %}");
+        background-repeat: no-repeat; */
+
+    
+    }
+    .pera {
+      font-size: 22px;
+      text-align: center;
+  }
+    .text {
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* background-color: rgba(255, 255, 255, 0.7); Adjust the background color and opacity as needed */
+    }
+
+    .text p {
+      text-align: center;
+      font-size: 20px;
+      width: 300px;
+      color:white /* Adjust the text color as needed */
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0px; /* Adjust the margin value as per your requirement */
+      padding: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .pera{
+          width:300px;
+          font-size=16px;
+      }
+    }
+ 
+  </style>
+</head>
+<body>
+  <div class="ro">
+    <center>
+    <h1 style="color:lightgreen;">About</h1>
+    </center>
+    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <p class="pera">Enjoy Ground Cycling And Gaming, Outdoor Activities, Dish Break, And Excellent Shocker. I am a dynamic individual navigating the cycles of life with resilience and purpose. Embracing challenges as opportunities, I strive for continuous growth. My journey is a tapestry of experiences, each thread weaving a story of perseverance and achievement. Committed to personal evolution, I approach each cycle with optimism and a determination to make a meaningful impact.</p>
+          </div>
+      </div>
+  </div>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .slides {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+    <title>Simple Slide Show</title>
+</head>
+<body>
+
+<div id="slide1" class="slides active">
+    <h1>Slide 1 Heading</h1>
+    <p>This is the content of Slide 1.</p>
+</div>
+
+<div id="slide2" class="slides">
+    <h1>Slide 2 Heading</h1>
+    <p>This is the content of Slide 2.</p>
+</div>
+
+<div id="slide3" class="slides">
+    <h1>Slide 3 Heading</h1>
+    <p>This is the content of Slide 3.</p>
+</div>
+
+<script>
+    let currentSlide = 1;
+
+    function showSlide(n) {
+        const slides = document.getElementsByClassName('slides');
+        if (n > slides.length) {
+            currentSlide = 1;
+        }
+        if (n < 1) {
+            currentSlide = slides.length;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slides[currentSlide - 1].style.display = 'block';
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide += 1);
+    }
+
+    function autoSlideShow() {
+        setInterval(nextSlide, 5000);
+    }
+
+    autoSlideShow();
+</script>
+
+</body>
+</html> -->
+
+<div class="image-container"style="margin-top :30px;margin-bottom:30px">
+    <img src="{% static 'image/Herob.png' %}" alt="Image 1">
+  <img src="{% static 'image/H1.png' %}" alt="Image 2">
+  <img src="{% static 'image/H2.png' %}" alt="Image 3">
+  <img src="{% static 'image/H3.png' %}" alt="Image 4">
+  <img src="{% static 'image/H4.jpg' %}" alt="Image 5">
+  <img src="{% static 'image/Herob.png' %}" alt="Image 6">
+  <!-- Add more images as needed -->
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+{% endblock %} 

@@ -1,0 +1,76 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+    body{
+      
+      width:100%;
+    }
+    #ma{
+      margin-top:5%;
+      margin-bottom:5%;
+      width:60%;
+      margin-left:15%
+      
+    }
+    #exampleInputEmail1{
+      width:400px;
+      border-radius:5px;
+    }
+    #exampleInputPassword1{
+      width:400px;
+      border-radius:5px;
+    }
+    #denB{
+      height:40px;
+      background-color:pink;
+      color:black;
+      font-size:18px;
+      width:120px
+    }
+    #mad{
+      margin-top:50px
+    }
+    #in{
+ font-size:20px;
+    }
+    #emailHelp{
+      font-size:18px;
+    }
+  </style>
+</head>
+<body>
+ <div id="main">
+  <!-- <div class="container"> -->
+  <div class="row  text-md-left" id="ma">
+<form class="w-50 mx-auto py-5 shadow p-4" action="{% url 'Login_data' %}" method="post" id="forl">
+  {% csrf_token %}
+  <h3 style="color: blue;">Login In</h3><hr>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label" style="color:darkgreen;"id="in">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+      <small id="emailHelp" class="form-text text-green">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="mb-3">
+      <label fo.r="exampleInputPassword1"class="form-label" style="color:darkgreen;" id="in">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password"required>
+    </div>
+    <div><p style="color: red; ""id="in"> {{incoreectmsg}} </p></div>
+    <div class="mb-3 d-flex"id="mad">
+    <button type="submit" class="btn btn-primary"id="denB">Submit</button>
+    <h5 class="form-label ms-auto mt-2"><a href="{% url 'Signup' %}" style="color:red;text-decoration: none;">Create New Registrestion</a></h5>
+  </form>
+ </div>
+ </div> 
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}
