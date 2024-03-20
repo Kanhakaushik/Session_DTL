@@ -3,151 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% comment %} <style>
-     body {
-      /* font-family: Arial, sans-serif; */
+  <style>
+    /* Default styles */
+    body {
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     nav {
       background-color: #f8f9fa;
       display: flex;
-      justify-content: space-around;
-      height:60px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #495057;
-      margin-right: 15px;
-      margin-top: 10px;
-      
-    }
-
-    .search-container {
-      display: flex;
-    }
-
-    .search-input {
-      border: 1px solid #ced4da;
-      border-radius: 10px;
-      {% comment %} margin-right: 10px; {% endcomment %}
-     {% comment %} margin-top:10px;
-      width: 200px;
-      height:40px;
-    }
-
-    .search-button {
-      
-      background-color: #007bff;
-      color: #fff;
-      border: 1px solid black;
-      height:40px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 10px 0px 5px 0px;
-    }
-
-    @media (max-width: 768px) {
-      .search-container {
-        margin-top: 10px;
-      }
-
-      .search-input {
-        width: 100%;
-        margin-right: 0;
-      }
-    }
-    .h4t{
-      margin-top:10px;
-    }
-  </style> {% endcomment %}
-  <style>
-    /* Default styles */
-    nav {
-      display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
     }
-  
+
     nav a {
       font-size: 20px;
-      margin-left:20px;
       text-decoration: none;
       color: black;
+      margin-left: 20px;
     }
-  
+
     .search-container {
       display: flex;
       align-items: center;
     }
-  
+
     .search-input {
       font-size: 18px;
+      border: 1px solid #ced4da;
+      border-radius: 10px;
+      height: 40px;
+      padding: 5px;
+      margin-right: 10px;
     }
-  
+
     .search-button {
       font-size: 18px;
+      background-color: #007bff;
+      color: #fff;
+      border: 1px solid black;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
     }
-  
+
     .h4t {
       font-size: 24px;
+      margin-top: 10px;
     }
-  
+
     /* Media queries for tablet */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
       }
-  
+
       nav a {
         margin-left: 10px;
         margin-bottom: 10px;
       }
     }
-  
+
     /* Media queries for mobile */
     @media (max-width: 480px) {
       .search-container {
         flex-direction: column;
         align-items: flex-start;
       }
-  
+
       .search-input,
       .search-button {
         margin-top: 10px;
       }
-  
+
       .h4t {
         font-size: 20px;
       }
     }
   </style>
-  
-  
   <title>Cycle</title>
 </head>
 <body>
 <nav>
-  <div style="display: flex;">
-  <a href="{% url 'home'%}" style="font-size: 20px;">Home</a>
-  <a href="{% url 'about'%}"style="font-size: 20px;">About</a>
-  {% comment %} <a href="{% url 'Signup'%}"style="font-size: 12px;">Sign Up</a> {% endcomment %}
-  {% if data%}
-  <a href="{% url 'delete'%}"style="font-size: 20px;">Logout</a>
-  {% else %}
-  <a href="{% url 'Login'%}"style="font-size: 20px;">Login</a>
-  {% endif %}
+  <div>
+    <a href="{% url 'home'%}">Home</a>
+    <a href="{% url 'about'%}">About</a>
+    {% if data %}
+    <a href="{% url 'delete'%}">Logout</a>
+    {% else %}
+    <a href="{% url 'Login'%}">Login</a>
+    {% endif %}
   </div>
   <div class="search-container">
-    <input type="text" class="search-input" placeholder="Search" style="font-size: 18px;">
-
-    <button class="search-button"style="font-size: 18px;">Search</button>
+    <input type="text" class="search-input" placeholder="Search">
+    <button class="search-button">Search</button>
   </div>
   <h4 class="h4t">{{data | default:'Welcome to Gust'}}</h4>
-  </nav>
+</nav>
 
 <!-- Your content goes here -->
 

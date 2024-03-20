@@ -1,76 +1,71 @@
 {% extends 'app/base.html' %}
-{% load static%}
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Document</title>
-  <style>
-  #bd{
-      {% comment %} background-image: url("{% static 'image/EC.jpg' %}"); {% endcomment %}
-      width: auto;
-      background-size: cover;
-       background-position: center; 
-      background-repeat: no-repeat;
-      width:100%;
-      height:auto;
-    }
-    #rm{
-      margin:5% 0% 3% 0%;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        #bd {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: auto;
         }
-    #int{
-      width:400px;
-      font-size:16px;
-    }
-    #la{
-      margin-right:41%;
-    }
-    
-  </style>
+
+        #rm {
+            margin: 5% 0% 3% 0%;
+        }
+
+        #int {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        #la {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div id="bd">
-<div class="row text-md-left" id="mt1">
-    <form class="w-50 mx-auto  shadow p-2" action="{% url 'savedata' %}" method="post"id="rm">
-{% csrf_token %}
-<center>
-<h3 style="color: darkpink;">Sigin In</h3><hr>
-<div class="row">
-  <div class="col">
-    <label for="fname" class="form-label"style="color:orange;"id="la">Full-Name</label>
-    <input type="text" class="form-control" placeholder="Full Name" id="int" aria-label="First name" name="Name">
-  </div>
-  </div>
-<div class="col">
-  <label for="email" class="form-label"style="color: orange;margin-right:46%;"id="la">Email</label>
-  <input type="email" class="form-control" id="int" name="email"placeholder="Email">
-</div>
-<div class="col">
-  <label for="Password" class="form-label" style="color:orange;margin-right:42%;"id="la">Password</label>
-  <input type="password" class="form-control" id="int" name="password" placeholder="Password" required>
-</div>
-<div class="col">
-  <label for="Adress" class="form-label" style="color:orange;margin-right:44%;"id="la">Contact</label>
-  <input type="text" class="form-control" id="int" placeholder="Contact"name="number">
-</div>
-
-<div class="col">
-  <label for="city" class="form-label"style="color: orange;margin-right:47%;"id="la">City</label>
-  <input type="text" class="form-control" id="int"name="city" placeholder="City">
-</div>
-   <div class="c1">
-
-  <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Sumbit</button>
-  
- 
-  {% comment %} <p>I have an Account <a href="{% url 'Login' %}">Login Now </a></p> {% endcomment %}
-   </div>  
-</center>
-</form>  
-</div>
+<div id="bd">
+    <div class="container">
+        <div class="row justify-content-center" id="mt1">
+            <form class="col-lg-6 col-md-8 col-sm-10 col-xs-12 mx-auto shadow p-4" action="{% url 'savedata' %}"
+                  method="post" id="rm">
+                {% csrf_token %}
+                <h3 class="text-center mb-4" style="color: darkpink;">Sign In</h3>
+                <div class="mb-3">
+                    <label for="fname" class="form-label" style="color: orange;">Full Name</label>
+                    <input type="text" class="form-control" placeholder="Full Name" id="int" aria-label="Full Name"
+                           name="Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label" style="color: orange;">Email</label>
+                    <input type="email" class="form-control" id="int" name="email" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label for="Password" class="form-label" style="color: orange;">Password</label>
+                    <input type="password" class="form-control" id="int" name="password" placeholder="Password"
+                           required>
+                </div>
+                <div class="mb-3">
+                    <label for="Adress" class="form-label" style="color: orange;">Contact</label>
+                    <input type="text" class="form-control" id="int" placeholder="Contact" name="number">
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label" style="color: orange;">City</label>
+                    <input type="text" class="form-control" id="int" name="city" placeholder="City">
+                </div>
+                <button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
